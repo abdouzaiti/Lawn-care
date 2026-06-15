@@ -1,0 +1,6 @@
+{
+  "name": "Verdant Lawn Care & Landscaping",
+  "description": "Premium, luxury lawn care and estate landscaping agency landing page containing interactive features like assessment calculators, before/after sliders, and custom estimate wizards.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
