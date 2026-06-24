@@ -8,7 +8,9 @@ import { GalleryItem } from "../types";
 import { Star, X, ZoomIn, Eye, Sparkles, Filter, ChevronLeft, ChevronRight } from "lucide-react";
 import { motion, AnimatePresence } from "motion/react";
 // @ts-expect-error - PNG image import typing
-import regeneratedGalleryImage from "../assets/images/regenerated_image_1782299410116.png";
+import regeneratedGalleryImage from "../assets/images/regenerated_image_1782301639790.png";
+// @ts-expect-error - PNG image import typing
+import lavenderTerraceImage from "../assets/images/regenerated_image_1782299626804.png";
 
 export default function Gallery() {
   const [filter, setFilter] = useState<"all" | "lawns" | "gardens" | "hardscapes" | "lighting">("all");
@@ -33,7 +35,7 @@ export default function Gallery() {
       id: "gal-3",
       title: "Aromatic Lavender Terrace",
       category: "gardens",
-      image: "https://images.unsplash.com/photo-1558521800-8300a7c41344?q=80&w=800&auto=format&fit=crop",
+      image: lavenderTerraceImage,
       description: "Symmetric lavender corridors bounded by natural limestone walls and organic trace feeding.",
     },
     {
