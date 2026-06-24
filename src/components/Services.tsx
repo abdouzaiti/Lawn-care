@@ -7,6 +7,10 @@ import { useState } from "react";
 import { Service } from "../types";
 import { X, ArrowRight, Check, Droplets, LayoutGrid, Sprout, Leaf } from "lucide-react";
 import { motion, AnimatePresence } from "motion/react";
+// @ts-expect-error - PNG image import typing
+import regeneratedIrrigationImage from "../assets/images/regenerated_image_1782298305085.png";
+// @ts-expect-error - PNG image import typing
+import regeneratedMaintenanceImage from "../assets/images/regenerated_image_1782298409831.png";
 
 interface ServicesProps {
   onOpenEstimateWithService: (serviceId: string) => void;
@@ -21,7 +25,7 @@ export default function Services({ onOpenEstimateWithService }: ServicesProps) {
       title: "Lawn Maintenance",
       shortDescription: "Mowing, edging, trimming, and lawn care.",
       longDescription: "Our signature lawn care regime elevates basic turf administration to an art form. We operate clean, state-of-the-art mowers calibrated uniquely daily to match soil dampness and grass tensile strength.",
-      image: "https://images.unsplash.com/photo-1592417817098-8f3d6eb19675?q=80&w=800&auto=format&fit=crop",
+      image: regeneratedMaintenanceImage,
       features: [
         "Calibrated precision mowing and striping",
         "Polished sidewalk and hardscape hand-edging",
@@ -53,7 +57,7 @@ export default function Services({ onOpenEstimateWithService }: ServicesProps) {
       title: "Irrigation Systems",
       shortDescription: "Efficient irrigation solutions for a healthy lawn.",
       longDescription: "Our professional irrigation systems feature dynamic weather integration, tracking microclimate precipitation in real-time. This saves water while ensuring deep botanical hydration.",
-      image: "https://images.unsplash.com/photo-1563191911-e65f8655ebf9?q=80&w=800&auto=format&fit=crop",
+      image: regeneratedIrrigationImage,
       features: [
         "Smart mobile controllers with climate sensors",
         "Micro-drip flower bed lines and spray heads",

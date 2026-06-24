@@ -7,6 +7,8 @@ import React, { useState } from "react";
 import { GalleryItem } from "../types";
 import { Star, X, ZoomIn, Eye, Sparkles, Filter, ChevronLeft, ChevronRight } from "lucide-react";
 import { motion, AnimatePresence } from "motion/react";
+// @ts-expect-error - PNG image import typing
+import regeneratedGalleryImage from "../assets/images/regenerated_image_1782299410116.png";
 
 export default function Gallery() {
   const [filter, setFilter] = useState<"all" | "lawns" | "gardens" | "hardscapes" | "lighting">("all");
@@ -17,7 +19,7 @@ export default function Gallery() {
       id: "gal-1",
       title: "Symmetric Front Lawn Manor",
       category: "lawns",
-      image: "https://images.unsplash.com/photo-1558904541-efa8c3a30fc9?q=80&w=800&auto=format&fit=crop",
+      image: regeneratedGalleryImage,
       description: "Laser-aligned premium fescue grass with custom brick accents and multi-tiered edge mulch.",
     },
     {

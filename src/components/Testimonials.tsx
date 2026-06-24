@@ -33,7 +33,20 @@ export default function Testimonials() {
   ]);
 
   return (
-    <section id="testimonials" className="py-24 bg-white relative">
+    <section id="testimonials" className="py-24 bg-white relative overflow-hidden">
+      <style>{`
+        @keyframes marquee {
+          0% { transform: translateX(-50%); }
+          100% { transform: translateX(0%); }
+        }
+        .animate-marquee {
+          animation: marquee 35s linear infinite;
+        }
+        .animate-marquee:hover {
+          animation-play-state: paused;
+        }
+      `}</style>
+
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Header containing text left, arrows right */}
@@ -59,17 +72,13 @@ export default function Testimonials() {
           </div>
         </div>
 
-        {/* Testimonials 3-Card Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {testimonials.map((test, index) => (
-            <motion.div
-              key={test.id}
-              initial={{ opacity: 0, y: 15 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: index * 0.1 }}
-              className="bg-white p-8 rounded-3xl border border-gray-100 hover:border-[#76a827]/30 hover:scale-101 transition-all duration-300 shadow-md flex flex-col justify-between"
-              id={test.id}
+        {/* Testimonials Marquee */}
+        <div className="flex gap-8 py-4 animate-marquee w-max">
+          {[...testimonials, ...testimonials, ...testimonials, ...testimonials].map((test, index) => (
+            <div
+              key={`${test.id}-${index}`}
+              id={index < testimonials.length ? test.id : undefined}
+              className="w-[350px] sm:w-[420px] shrink-0 bg-white p-8 rounded-3xl border border-gray-100 hover:border-[#76a827]/30 hover:shadow-lg transition-all duration-300 flex flex-col justify-between"
             >
               <div className="space-y-6">
                 {/* Contributor Profile on row: photo on left, details on right */}
@@ -97,11 +106,11 @@ export default function Testimonials() {
                 </div>
 
                 {/* Quote Content */}
-                <p className="text-sm font-medium text-gray-650 italic leading-relaxed">
+                <p className="text-sm font-medium text-gray-650 italic leading-relaxed whitespace-normal">
                   "{test.quote}"
                 </p>
               </div>
-            </motion.div>
+            </div>
           ))}
         </div>
       </div>
